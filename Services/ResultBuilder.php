@@ -1,5 +1,5 @@
 <?php
-namespace Cogipix\CogimixYoutubeBundle\Services;
+namespace Cogipix\CogimixDailymotionBundle\Services;
 
 use Cogipix\CogimixCommonBundle\Entity\TrackResult;
 
@@ -9,25 +9,19 @@ class ResultBuilder{
     public function createFromVideoEntry($videoEntry){
 
         $item = null;
-        if($videoEntry !== null ){
+        if(!empty($videoEntry) ){
             $item = new TrackResult();
-            $item->setEntryId($videoEntry->getVideoId());
-            if(strstr($videoEntry->getVideoTitle(),'-' )!==false){
-                $artistTitle = explode('-', $videoEntry->getVideoTitle());
+            $item->setEntryId($videoEntry['id']);
+            if(strstr($videoEntry['title'],'-' )!==false){
+                $artistTitle = explode('-', $videoEntry['title']);
                 $item->setArtist(trim($artistTitle[0]));
                 $item->setTitle(trim($artistTitle[1]));
             }else{
-                $item->setTitle($videoEntry->getVideoTitle());
+                $item->setTitle($videoEntry['title']);
 
             }
-            $videoThumbnails = $videoEntry->getVideoThumbnails();
-            $thumbnails=array();
-            if(!empty($videoThumbnails) && array_key_exists(0, $videoThumbnails)){
-                $thumbnails=$videoThumbnails[0]['url'];
-            }else{
-                $thumbnails=null;
-            }
-            $item->setThumbnails($thumbnails);
+
+            $item->setThumbnails( $videoEntry['thumbnail_60_url']);
             $item->setTag($this->getResultTag());
             $item->setIcon($this->getDefaultIcon());
         }
@@ -50,10 +44,10 @@ class ResultBuilder{
 
 
     public function getDefaultIcon(){
-        return 'bundles/cogimixyoutube/images/yt-icon.png';
+        return 'bundles/cogimixdailymotion/images/dm-icon.png';
     }
 
     public function getResultTag(){
-        return 'yt';
+        return 'dm';
     }
 }

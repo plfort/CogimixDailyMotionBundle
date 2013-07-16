@@ -4,28 +4,26 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
 
-    
     <services>
-        
-                   
-           <service id="youtube_music.search_service"  parent="abstract_music_search"  class="Cogipix\CogimixYoutubeBundle\Services\YoutubeMusicSearch">
-                 <argument type="service" id="youtube_music.result_builder"/>
+                           
+           <service id="dailymotion_music.search_service"  parent="abstract_music_search"  class="Cogipix\CogimixDailymotionBundle\Services\DailymotionMusicSearch">
+                 <argument type="service" id="dailymotion_music.result_builder"/>
                 <tag name="cogimix.plugin" />
            </service>
-            <service id="youtube_music.result_builder" class="Cogipix\CogimixYoutubeBundle\Services\ResultBuilder">
+            <service id="dailymotion_music.result_builder" class="Cogipix\CogimixDailymotionBundle\Services\ResultBuilder">
                 </service>
                 
-           <service id="youtube_music.url_search" class="Cogipix\CogimixYoutubeBundle\Services\YoutubeUrlSearch">
-               <argument type="service" id="youtube_music.result_builder"/>
+           <service id="dailymotion_music.url_search" class="Cogipix\CogimixDailymotionBundle\Services\DailymotionUrlSearch">
+               <argument type="service" id="dailymotion_music.result_builder"/>
                 <tag name="cogimix.url_search" />
            </service>
            
            
-           <service id="youtube_music.widget_renderer" class="Cogipix\CogimixYoutubeBundle\ViewHooks\Widget\WidgetRenderer">
+           <service id="dailymotion_music.widget_renderer" class="Cogipix\CogimixDailymotionBundle\ViewHooks\Widget\WidgetRenderer">
                 <tag name="cogimix.widget_renderer"/>
            </service>
            
-           <service id="youtube_music.jsimport_renderer" class="Cogipix\CogimixYoutubeBundle\ViewHooks\Javascript\JavascriptImportRenderer">
+           <service id="dailymotion_music.jsimport_renderer" class="Cogipix\CogimixDailymotionBundle\ViewHooks\Javascript\JavascriptImportRenderer">
                 <tag name="cogimix.jsimport_renderer"/>
            </service>
     </services>

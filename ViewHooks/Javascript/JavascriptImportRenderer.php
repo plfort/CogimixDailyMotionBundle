@@ -1,5 +1,5 @@
 <?php
-namespace Cogipix\CogimixYoutubeBundle\ViewHooks\Javascript;
+namespace Cogipix\CogimixDailymotionBundle\ViewHooks\Javascript;
 use Cogipix\CogimixCommonBundle\ViewHooks\Javascript\JavascriptImportInterface;
 
 /**
@@ -12,7 +12,7 @@ class JavascriptImportRenderer implements JavascriptImportInterface
 
     public function getJavascriptImportTemplate()
     {
-        return 'CogimixYoutubeBundle::js.html.twig';
+        return 'CogimixDailymotionBundle::js.html.twig';
     }
 
 }

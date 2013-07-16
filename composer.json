@@ -1,5 +1,5 @@
 {
-    "name": "cogipix/cogimixyoutube",
+    "name": "cogipix/cogimixdailymotion",
     "type": "symfony-bundle",
     "authors": [
         {
@@ -9,11 +9,11 @@
     ],
     "require": {
        "php": ">=5.3.3",
-        "zend/gdata":"dev-master"
+       "dailymotion/sdk":"1.5.1"
     },
     "autoload": {
-        "psr-0": {"Cogipix\\CogimixYoutubeBundle": ""}
+        "psr-0": {"Cogipix\\CogimixDailymotionBundle": ""}
     },
-    "target-dir": "Cogipix/CogimixYoutubeBundle",
-    "include-path": ["../../../vendor/zend/gdata/library"]
+    "target-dir": "Cogipix/CogimixDailymotionBundle",
+  
 }

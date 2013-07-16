@@ -1,5 +1,5 @@
 <?php
-namespace Cogipix\CogimixYoutubeBundle\ViewHooks\Widget;
+namespace Cogipix\CogimixDailymotionBundle\ViewHooks\Widget;
 use Cogipix\CogimixCommonBundle\ViewHooks\Widget\WidgetRendererInterface;
 
 /**
@@ -13,7 +13,7 @@ class WidgetRenderer implements WidgetRendererInterface
 
     public function getWidgetTemplate()
     {
-        return 'CogimixYoutubeBundle:Widget:widget.html.twig';
+        return 'CogimixDailymotionBundle:Widget:widget.html.twig';
     }
 
     public function getParameters(){
