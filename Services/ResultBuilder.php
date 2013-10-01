@@ -44,7 +44,7 @@ class ResultBuilder{
 
 
     public function getDefaultIcon(){
-        return 'bundles/cogimixdailymotion/images/dm-icon.png';
+        return '/bundles/cogimixdailymotion/images/dm-icon.png';
     }
 
     public function getResultTag(){

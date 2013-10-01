@@ -159,7 +159,7 @@ function dailymotionPlayer(musicPlayer) {
 	};
 	
 }
-iconMap['dm'] = 'bundles/cogimixdailymotion/images/dm-icon.png';
+iconMap['dm'] = '/bundles/cogimixdailymotion/images/dm-icon.png';
 $("body").on('musicplayerReady',function(event){
 	event.musicPlayer.addPlugin('dm',new dailymotionPlayer(event.musicPlayer));
 });
