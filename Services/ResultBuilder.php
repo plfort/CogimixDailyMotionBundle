@@ -12,6 +12,7 @@ class ResultBuilder{
         if(!empty($videoEntry) ){
             $item = new TrackResult();
             $item->setEntryId($videoEntry['id']);
+            $item->setDuration($videoEntry['duration']);
             if(strstr($videoEntry['title'],'-' )!==false){
                 $artistTitle = explode('-', $videoEntry['title']);
                 $item->setArtist(trim($artistTitle[0]));

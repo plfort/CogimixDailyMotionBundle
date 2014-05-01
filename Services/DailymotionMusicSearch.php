@@ -33,7 +33,7 @@ class DailymotionMusicSearch extends AbstractMusicSearch{
         $feeds = array();
         try{
             $feeds= $this->dailymotionService->get('/videos',$this->videoQuery);
-            //var_dump($feeds);
+            
         }catch(\Exception $ex){
             $this->logger->err($ex);
             return array();
@@ -47,7 +47,7 @@ class DailymotionMusicSearch extends AbstractMusicSearch{
 
 
         $this->logger->info('Dailymotion executePopularQuery');
-        $this->videoQuery = array('fields'=>array('id','title','thumbnail_60_url'),'filters'=>array('hd'), 'channel'=>'music','sort'=>'visited-week','limit'=>30);
+        $this->videoQuery = array('fields'=>array('id','title','thumbnail_60_url','duration'),'filters'=>array('hd'), 'channel'=>'music','sort'=>'visited-week','limit'=>30);
         try{
              $feeds= $this->dailymotionService->get('/videos',$this->videoQuery);
 
@@ -62,7 +62,7 @@ class DailymotionMusicSearch extends AbstractMusicSearch{
 
     protected function buildQuery(){
 
-        $this->videoQuery = array('fields'=>array('id','title','thumbnail_60_url'),'channel'=>'music','search'=>$this->searchQuery->getSongQuery(),'limit'=>30);
+        $this->videoQuery = array('fields'=>array('id','title','thumbnail_60_url','duration'),'channel'=>'music','sort'=>'relevance','search'=>$this->searchQuery->getSongQuery(),'limit'=>30);
 
     }
 

@@ -37,12 +37,12 @@ class DailymotionUrlSearch implements UrlSearcherInterface
 
                 if($url->path[0] == 'swf' || $url->path[0] == 'video' ){
 
-                    $result=$dailymotion->get('/videos',array('fields'=>array('id','title','thumbnail_60_url'),'ids'=>array(end($url->path) ) ));
+                    $result=$dailymotion->get('/videos',array('fields'=>array('id','title','thumbnail_60_url','duration'),'ids'=>array(end($url->path) ) ));
                 }else{
                     $path=end($url->path);
                     $lastPath=explode('_', $path);
 
-                    $result=$dailymotion->get('/videos',array('fields'=>array('id','title','thumbnail_60_url'),'ids'=>array($lastPath[0]) ) );
+                    $result=$dailymotion->get('/videos',array('fields'=>array('id','title','thumbnail_60_url','duration'),'ids'=>array($lastPath[0]) ) );
 
                 }
 
