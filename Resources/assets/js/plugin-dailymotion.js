@@ -1,3 +1,4 @@
+iconMap['dm'] = '/bundles/cogimixdailymotion/images/dm-icon.png';
 function dailymotionPlayer(musicPlayer) {
 	
 	this.name = "Dailymotion";
@@ -158,8 +159,14 @@ function dailymotionPlayer(musicPlayer) {
 		loggerDailymotion.debug('Interval : '+self.interval+' created');
 	};
 	
+	this.enableFullscreen=function(){
+		self.dmplayer.setFullscreen(true);
+	}
+	
 }
-iconMap['dm'] = '/bundles/cogimixdailymotion/images/dm-icon.png';
+
+
+
 $("body").on('musicplayerReady',function(event){
 	event.musicPlayer.addPlugin('dm',new dailymotionPlayer(event.musicPlayer));
 });

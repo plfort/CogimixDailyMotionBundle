@@ -22,7 +22,7 @@ class ResultBuilder{
 
             }
 
-            $item->setThumbnails( $videoEntry['thumbnail_60_url']);
+            $item->setThumbnails( $videoEntry['thumbnail_120_url']);
             $item->setTag($this->getResultTag());
             $item->setIcon($this->getDefaultIcon());
         }
