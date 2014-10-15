@@ -10,9 +10,12 @@ function dailymotionPlayer(musicPlayer) {
 	this.widgetElement = $("#dailymotionContainer");
 
 	var self = this;
-	
+	var parameters = {
+			'chromeless':1
+			
+	};
 	this.initPlayer = function(videoId){
-		self.dmplayer = DM.player(document.getElementById('dailymotion-player'), {video: videoId,width:'100%',height:'200'});
+		self.dmplayer = DM.player(document.getElementById('dailymotion-player'), {video: videoId,width:'100%',height:'150',params:parameters});
 		self.dmplayer.addEventListener("apiready", function(e){self.onDailymotionAPIReady(e)});
 	}
 
