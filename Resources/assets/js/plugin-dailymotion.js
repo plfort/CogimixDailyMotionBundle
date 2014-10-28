@@ -171,8 +171,22 @@ function dailymotionPlayer(musicPlayer) {
 
 
 $("body").on('musicplayerReady',function(event){
-	event.musicPlayer.addPlugin('dm',new dailymotionPlayer(event.musicPlayer));
+	
+	event.musicPlayer.lazyLoadPlugin['dm'] = function() {
+		$.when(loadDailymotion()).done(function() {
+			event.musicPlayer.addPlugin('dm',new dailymotionPlayer(event.musicPlayer));
+			event.musicPlayer.play();
+		});
+	}
 });
 
+
+function loadDailymotion(){
+	  var e = document.createElement('script'); e.async = true;
+	  e.src = document.location.protocol + '//api.dmcdn.net/all.js';
+	  var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(e, s);
+	  
+	  return dailymotionLoadedDeferred;
+}
 
 	

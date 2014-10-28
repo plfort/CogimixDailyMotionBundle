@@ -5,14 +5,12 @@
 
 <script>
 var loggerDailymotion= JSLog.Register('CogimixDailymotion');
-
+var dailymotionLoadedDeferred = new $.Deferred();
 window.dmAsyncInit = function()
 {
     DM.init({apiKey: '9bb1fc0bff3793dbd57c', status: false, cookie: false});
+    dailymotionLoadedDeferred.resolve();
 };
-(function() {
-    var e = document.createElement('script'); e.async = true;
-    e.src = document.location.protocol + '//api.dmcdn.net/all.js';
-    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(e, s);
-}());
+
+
 </script>
