@@ -1,7 +1,6 @@
 <?php
 namespace Cogipix\CogimixDailymotionBundle\Services;
 
-use Cogipix\CogimixCommonBundle\Entity\TrackResult;
 use Cogipix\CogimixCommonBundle\MusicSearch\AbstractMusicSearch;
 
 class DailymotionMusicSearch extends AbstractMusicSearch{

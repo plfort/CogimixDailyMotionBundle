@@ -1,7 +1,7 @@
 <?php
 namespace Cogipix\CogimixDailymotionBundle\Services;
 
-use Cogipix\CogimixCommonBundle\Entity\TrackResult;
+use Cogipix\CogimixCommonBundle\Entity\Song;
 
 class ResultBuilder{
 
@@ -10,7 +10,7 @@ class ResultBuilder{
 
         $item = null;
         if(!empty($videoEntry) ){
-            $item = new TrackResult();
+            $item = new Song();
             $item->setEntryId($videoEntry['id']);
             $item->setDuration($videoEntry['duration']);
             if(strstr($videoEntry['title'],'-' )!==false){
