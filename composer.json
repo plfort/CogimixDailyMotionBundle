@@ -9,7 +9,7 @@
     ],
     "require": {
        "php": ">=5.3.3",
-       "dailymotion/sdk":"1.5.1"
+       "dailymotion/sdk":"1.6.*"
     },
     "autoload": {
         "psr-0": {"Cogipix\\CogimixDailymotionBundle": ""}
